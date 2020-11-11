@@ -1,0 +1,17 @@
+{
+  "name": "WhatTheFootball",
+  "short_name": "WTF",
+  "theme_color": "#0a105a",
+  "background_color": "#e6e6e6",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/index.html",
+  "icons": [
+        {
+            "src": "img/logo-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

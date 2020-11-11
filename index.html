@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="What the Football" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/materialize.min.css" />
+	<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#0A105A"/>
+	<title>WhatTheFootball</title>
+
+</head>
+<body>
+	<div class="mobile-nav navbar-fixed hide-on-large-only">
+      <nav>
+        <div class="nav-wrapper">
+          <ul class="botnav row"></ul>
+        </div>
+      </nav>
+    </div>
+    <nav class="nav-extended scroll" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo left">
+        <img src="img/logo-brand-l.png" alt="logo-brand"></a>
+        <ul class="topnav right hide-on-med-and-down"></ul>
+        <!-- <ul id="nav-mobile" class="sidenav"></ul> -->
+      </div>
+    </nav>
+	
+	<div id="body-content" class="index-content"></div>
+
+
+
+
+	<script src="js/check-service-worker.js"></script>
+	<script src="service-worker.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/materialize.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/api.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+        getCompetitions()
+    });
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.padtop{
+	margin-top: 60px;
+}
+.index-content{
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+.botnav{
+	display: flex;
+    justify-content: center;
+}
+.mobile-nav{
+	position: fixed;
+    bottom: 0;
+    background-color: #0A105A;
+    border-radius: 16px;
+}
+nav .brand-logo.left{
+	display: flex;
+	align-items: center;
+	height: 55px;
+}
+.botnav{
+	background-color: #0A105A;
+}
+.para{
+	padding:0 1em 3rem 1em;
+}
+.scroll{
+	background-color: #0A105A; 
+	position: fixed; 
+	top: 0; 
+	width: 100%; 
+	transition: top 0.3s; 
+	z-index: 999;
+}
+.tmb-club{
+	width: 70px;
+}
+.list-club{
+	top:70;
+}
+.colors{
+	color:#233D87;
+	color:#0A105A;
+	color:#EC6F59; 
+	color:#F5F5F5; 
+}

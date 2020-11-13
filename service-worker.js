@@ -6,16 +6,16 @@ let urlsToCache = [
   "/pages/dashboard.html",
   "/pages/about.html",
   "/pages/saved.html",
-  "/css/materialize.min.css",
   "/css/style.css",
   "/css/materialize.css",
-  "/js/materialize.min.js",
   "js/script.js",
   "js/api.js",
+  "js/components.js",
+  "js/check-service-worker.js",
   "img/favicon.ico",
   "img/logo-brand-l.png",
   "img/soccer.png",
-  "https://fonts.googleapis.com/icon?family=Material+Icons",
+  "https://fonts.googleapis.com/icon?family=Material+Icons"
 ];
 
   self.addEventListener("install", function(event) {

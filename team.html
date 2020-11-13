@@ -14,33 +14,58 @@
 
 </head>
 <body>
-	<div class="mobile-nav navbar-fixed hide-on-large-only">
+	<!-- <div class="mobile-nav navbar-fixed hide-on-large-only">
       <nav>
         <div class="nav-wrapper">
           <ul class="botnav row"></ul>
         </div>
       </nav>
-    </div>
+    </div> -->
     <nav class="nav-extended scroll" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="/" class="brand-logo left">
-        <img src="img/logo-brand-l.png" alt="logo-brand"></a>
-        <ul class="topnav right hide-on-med-and-down"></ul>
+         <i class="small material-icons">close</i></a>
+         <!-- <i class="small .show-on-medium-and-down show-on-small hide-on-large-only right material-icons">bookmark_border</i> -->
+        <!-- <ul class="topnav right hide-on-med-and-down"></ul> -->
       </div>
     </nav>
 	
-	<div id="body-content" class="index-content"></div>
+
+   <div class="detail container"></div> 
+   <div class="squad container">
+    <h2>Daftar Para Pemain</h2>
+      <table class="striped table-style responsive-table">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Posisi</th>
+            <th>Kebangsaan</th>
+          </tr>
+        </thead>
+        <tbody class="table-squad">
+
+        </tbody>
+      </table>
+   </div>
+<div class="show-on-large hide-on-med-and-down fixed-action-btn">
+    <a class="btn-floating btn-large waves-effect waves-light show-on-large .hide-on-med-and-down  indigo darken-4"><i class="material-icons">bookmark_border</i></a>
+</div>
 
 
 
 
-<!-- 	<script src="js/check-service-worker.js"></script> -->
-	<script src="service-worker.js"></script>
+
+
+<!--  <script src="js/check-service-worker.js"></script> -->
+  <script src="service-worker.js"></script>
 <!--     <script src="js/materialize.min.js"></script> -->
-    <script src="js/materialize.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/api.js"></script>
-  <script src="js/getAllTeams.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/getDetail.js"></script>
+
+
+
 	<script>
 		  // REGISTER SERVICE WORKER
   if ("serviceWorker" in navigator) {
@@ -58,7 +83,7 @@
     console.log("ServiceWorker belum didukung browser ini.");
   }
 		document.addEventListener("DOMContentLoaded", function() {
-        getAllTeams()
+        getTeamById()
     });
 	</script>
 </body>

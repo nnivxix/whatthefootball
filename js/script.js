@@ -57,6 +57,9 @@ function loadPage(page) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4) {
       var content = document.querySelector("#body-content");
+      switch(page){
+        case "dashboard":  getAllTeams(); break;
+      }
       if (this.status == 200) {
         content.innerHTML = xhttp.responseText;
       } else if (this.status == 404) {
@@ -71,3 +74,11 @@ function loadPage(page) {
 }
   }
 )
+
+//floating button
+  document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelector('.fixed-action-btn');
+    const instances = M.FloatingActionButton.init(elems, {
+      direction : 'right'
+    });
+  });

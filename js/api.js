@@ -30,33 +30,19 @@ function error(error) {
   // Parameter error berasal dari Promise.reject()
   console.log("Error : " + error);
 }
+
+
 // Blok kode untuk melakukan request data json
-function getCompetitions() {
+
+//fungsi pemanggilan data semua tim
+function getAllTeams() {
   if ("caches" in window) {
     caches
       .match(base_url + "competitions/2021/teams")
       .then(function (response) {
         if (response) {
           response.json().then(function (data) {
-
-            console.log(data);
-            var listClub = "";
-    		data.teams.forEach(club => {
-    		listClub += `
-    		  <div class="card">
-  				<div class="card-image waves-effect waves-block waves-light">
-    			  <img class="activator tmb-club" src="${club.crestUrl}">
-    			</div>
-    			<div class="card-content">
-    			  <span class="card-title activator grey-text text-darken-4">${club.name}</span>
-    			  <p><a href="#">This is a link</a></p>
-    			</div>
- 			 </div>
-
-    		`
-    	});
-    	document.querySelector(".list-club").innerHTML = listClub
- 
+          daftarClub(data)
           });
         }
       });
@@ -65,27 +51,32 @@ function getCompetitions() {
     .then(status)
     .then(json)
     .then(function (data) {
-    	console.log(data)
-            var listClub = "";
-    		data.teams.forEach(club => {
-    		listClub += `
-    		  <div class="row">
-    		  	<div class="col s4">
-    		  		<div class="card-image waves-effect waves-block waves-light">
-    			 	<img class="activator tmb-club" src="${club.crestUrl}">
-    				</div>
-    				<div class="card-content">
-    			  	<span class="card-title activator grey-text text-darken-4">${club.name}</span>
-    			  	<p><a href="#">This is a link</a></p>
-    				</div>
-	 			 </div>
-    		`
-    	});
-    	document.querySelector(".list-club").innerHTML = listClub
+      daftarClub(data)
     })
     .catch(error);
 }
 
-
-// getCompetitions()
-console.log('test for api.js')
+//funsi pemanggilan tim sesuai ID
+function getTeamById() {
+    return new Promise(function(resolve, reject) {
+  // Ambil nilai query parameter (?id=)
+  let urlParams = new URLSearchParams(window.location.search);
+  let idParam = urlParams.get("id");
+    if ("caches" in window) {
+      caches.match(base_url + "teams/" + idParam).then( (response) => {
+        if (response) {
+          response.json().then( (data) => {
+            ditelClub(data)
+          });
+        }
+      });
+    }
+    fetchApi(base_url + "teams/" + idParam)
+      .then(status)
+      .then(json)
+      .then( (data) => {
+          ditelClub(data)
+      })
+          .catch(error);;
+  })
+  }

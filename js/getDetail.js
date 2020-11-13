@@ -1,7 +1,7 @@
 
 const ditelClub = data => {
-	let getDitelClub ="";
-	let getSquadClub ="";
+	let DitelClubHTML ="";
+	let SquadClubHTML ="";
 	DitelClubHTML +=`
 	    <div class="row">
 	    	<img src="${data.crestUrl}" alt="logo club" class="col s12 l6 center">
@@ -24,7 +24,7 @@ const ditelClub = data => {
 	})
 
 
-	document.querySelector(".detail").innerHTML = getDitelClub;
-	document.querySelector(".table-squad").innerHTML = getSquadClub;
+	document.querySelector(".detail").innerHTML = DitelClubHTML;
+	document.querySelector(".table-squad").innerHTML = SquadClubHTML;
 	// resolve(data);
 }

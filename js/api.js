@@ -42,7 +42,7 @@ function getAllTeams() {
       .then(function (response) {
         if (response) {
           response.json().then(function (data) {
-          daftarClub(data)
+          daftarTeam(data);
           });
         }
       });
@@ -51,7 +51,8 @@ function getAllTeams() {
     .then(status)
     .then(json)
     .then(function (data) {
-      daftarClub(data)
+      daftarTeam(data);
+      console.log(data.teams);
     })
     .catch(error);
 }
@@ -66,7 +67,8 @@ function getTeamById() {
       caches.match(base_url + "teams/" + idParam).then( (response) => {
         if (response) {
           response.json().then( (data) => {
-            ditelClub(data)
+            ditelTeam(data)
+
           });
         }
       });
@@ -75,8 +77,8 @@ function getTeamById() {
       .then(status)
       .then(json)
       .then( (data) => {
-          ditelClub(data)
+          ditelTeam(data)
       })
-          .catch(error);;
+          .catch(error);
   })
   }

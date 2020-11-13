@@ -1,8 +1,9 @@
 
-const ditelClub = data => {
-	let DitelClubHTML ="";
-	let SquadClubHTML ="";
-	DitelClubHTML +=`
+const ditelTeam = data => {
+	let DitelTeamHTML ="";
+	let SquadTeamHTML ="";
+
+	DitelTeamHTML +=`
 	    <div class="row">
 	    	<img src="${data.crestUrl}" alt="logo club" class="col s12 l6 center">
         	<div class="col s12 m12"><h3>${data.name}</h3></div>
@@ -14,7 +15,7 @@ const ditelClub = data => {
         </div>
 	`;
 	data.squad.forEach(player =>{
-		SquadClubHTML += `
+		SquadTeamHTML += `
 		  <tr>
             <td>${player.name}</td>
             <td>${player.position}</td>
@@ -24,7 +25,7 @@ const ditelClub = data => {
 	})
 
 
-	document.querySelector(".detail").innerHTML = DitelClubHTML;
-	document.querySelector(".table-squad").innerHTML = SquadClubHTML;
+	document.querySelector(".detail").innerHTML = DitelTeamHTML;
+	document.querySelector(".table-squad").innerHTML = SquadTeamHTML;
 	// resolve(data);
 }

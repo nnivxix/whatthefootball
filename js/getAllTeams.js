@@ -1,7 +1,7 @@
-const daftarClub = data => {
-	let getDaftarClub = ""
+function daftarTeam (data)  {
+	let DaftarTeamHTML = "";
 	data.teams.forEach(club => {
-		getDaftarClub += `
+		DaftarTeamHTML += `
 		<div class="row">
 		<div class="col l4 s12 center card-bg">
 			<div class="card-image waves-effect waves-block waves-light">
@@ -13,7 +13,7 @@ const daftarClub = data => {
 		</div>
 		</div>
 		`
-	}) 
-	document.getElementsByClassName("list-club").innerHTML = getDaftarClub;
+	});
+	document.getElementsByClassName("list-club").innerHTML = DaftarTeamHTML;
 
 }

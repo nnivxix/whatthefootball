@@ -48,7 +48,7 @@ document.addEventListener(
     }
 
 // Load page content
-var page = window.location.hash.substr(1);
+let page = window.location.hash.substr(1);
 if (page == "") page = "dashboard";
 loadPage(page);
  
@@ -56,10 +56,17 @@ function loadPage(page) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4) {
-      var content = document.querySelector("#body-content");
-      switch(page){
-        case "dashboard":  getAllTeams(); break;
-      }
+      let content = document.querySelector("#body-content");
+
+
+      if (page === "dashboard") {
+           getAllTeams();
+        } else if (page === "saved") {
+          getSavedTeam();
+        }
+      // switch(page){
+      //   case "dashboard":  getAllTeams(); break;
+      // }
       if (this.status == 200) {
         content.innerHTML = xhttp.responseText;
       } else if (this.status == 404) {

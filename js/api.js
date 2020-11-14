@@ -68,7 +68,7 @@ function getTeamById() {
         if (response) {
           response.json().then( (data) => {
             ditelTeam(data)
-
+            resolve(data);
           });
         }
       });
@@ -78,7 +78,16 @@ function getTeamById() {
       .then(json)
       .then( (data) => {
           ditelTeam(data)
+          resolve(data);
       })
           .catch(error);
   })
   }
+
+function getSavedTeam(){
+  getAll().then( data =>{
+    console.log(data)
+    AllSavedTeams(data)
+  })
+}
+

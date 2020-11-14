@@ -47,8 +47,11 @@
         </tbody>
       </table>
    </div>
-<div class="show-on-large hide-on-med-and-down fixed-action-btn">
-    <a class="btn-floating btn-large waves-effect waves-light show-on-large .hide-on-med-and-down  indigo darken-4"><i class="material-icons">bookmark_border</i></a>
+<div class=" fixed-action-btn">
+    <a class="btn-floating btn-large waves-effect waves-light show-on-large .hide-on-med-and-down  indigo darken-4" id="save"><i class="material-icons">bookmark_border</i></a>
+</div>
+<div class=" fixed-action-btn">
+    <a class="btn-floating btn-large waves-effect waves-light show-on-large .hide-on-med-and-down  indigo darken-4" id="delete"><i class="material-icons">delete</i></a>
 </div>
 
 
@@ -56,13 +59,14 @@
 
 
 
-<!--  <script src="js/check-service-worker.js"></script> -->
   <script src="service-worker.js"></script>
-<!--     <script src="js/materialize.min.js"></script> -->
-  <script src="js/materialize.js"></script>
+  <script src="js/materialize.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/components.js"></script>
   <script src="js/api.js"></script>
-  <script src="js/getDetail.js"></script>
+  <script src="js/idb.js"></script>
+  <script src="js/my-db.js"></script>
+
 
 
 
@@ -83,7 +87,40 @@
     console.log("ServiceWorker belum didukung browser ini.");
   }
 		document.addEventListener("DOMContentLoaded", function() {
-        getTeamById()
+        const urlParams = new URLSearchParams(window.location.search);
+        const isFromSaved = urlParams.get("saved");
+
+        const save = document.querySelector("#save");
+        const myTeam = getTeamById();
+       
+        const del = document.querySelector("#delete");
+
+
+        if (isFromSaved) {
+            save.style.display = "none";
+            del.style.display = "block";
+            getSavedTeam()
+        } else {
+          myTeam
+          save.style.display = "block";
+          del.style.display = "none";
+        }
+
+
+        save.onclick = function() {
+        console.log("Tombol FAB di klik.");
+        myTeam.then( team => {
+            console.log(team)
+            savedTeam(team);
+        });
+    }
+        del.onclick = function() {
+        console.log("Tombol delete di klik.");
+        myTeam.then( team => {
+            console.log(team)
+            deleteTeam(team);
+        });
+    }
     });
 	</script>
 </body>

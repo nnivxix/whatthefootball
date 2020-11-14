@@ -5,19 +5,22 @@ let urlsToCache = [
   "/index.html",
   "/team.html",
   "/pages/dashboard.html",
-  "/pages/about.html",
   "/pages/saved.html",
+  "/pages/about.html",
   "/css/style.css",
-  "/css/materialize.css",
+  "/css/materialize.min.css",
   "js/script.js",
   "js/api.js",
-  "js/getDetail.js",
-  "js/getAllTeams.js",
-  "js/check-service-worker.js",
+  "js/components.js",
+  "js/materialize.min.js",
+  "js/idb.js",
+  "js/my-db.js",
   "img/favicon.ico",
+  "/img/logo-512x512.png",
   "img/logo-brand-l.png",
   "img/soccer.png",
-  "https://fonts.googleapis.com/icon?family=Material+Icons"
+  "https://fonts.googleapis.com/icon?family=Material+Icons",
+  "/manifest.json"
 ];
 
   self.addEventListener("install", function(event) {

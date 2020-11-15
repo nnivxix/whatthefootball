@@ -52,7 +52,7 @@ function getAllTeams() {
     .then(json)
     .then(function (data) {
       daftarTeam(data);
-      console.log(data.teams);
+      // console.log(data.teams);
     })
     .catch(error);
 }
@@ -86,7 +86,7 @@ function getTeamById() {
 
 function getSavedTeam(){
   getAll().then( data =>{
-    console.log(data)
+    // console.log(data)
     AllSavedTeams(data)
   })
 }

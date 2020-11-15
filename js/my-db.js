@@ -10,12 +10,11 @@ let dbPromised = idb.open("wtf", 1, function(upgradeDb) {
       .then(db => {
         let tx = db.transaction("teams", "readwrite");
         let store = tx.objectStore("teams");
-        console.log(team);
         store.put(team);
         return tx.complete;
       })
       .then(()=> {
-        console.log("Artikel berhasil di simpan.");
+        alert("Tim Favoritmu sudah disimpan");
       });
   }
     function deleteTeam(team) {
@@ -23,13 +22,12 @@ let dbPromised = idb.open("wtf", 1, function(upgradeDb) {
       .then(db => {
         let tx = db.transaction("teams", "readwrite");
         let store = tx.objectStore("teams");
-        console.log(team);
         store.delete(Number(team.id));
         // transaction.objectStore("clubs").delete(Number(data.id));
         return tx.complete;
       })
       .then(()=> {
-        console.log("Delete");
+        alert("Tim Favoritmu sudah dihapus")
       });
   }
 
@@ -47,19 +45,4 @@ let dbPromised = idb.open("wtf", 1, function(upgradeDb) {
       });
   });
 }
-
-////////////////////
-// function getAll() {
-//   return new Promise(function(resolve, reject) {
-//     dbPromised
-//       .then(function(db) {
-//         var tx = db.transaction("articles", "readonly");
-//         var store = tx.objectStore("articles");
-//         return store.getAll();
-//       })
-//       .then(function(articles) {
-//         resolve(articles);
-//       });
-//   });
-// }
 

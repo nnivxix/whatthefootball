@@ -14,19 +14,11 @@
 
 </head>
 <body>
-	<!-- <div class="mobile-nav navbar-fixed hide-on-large-only">
-      <nav>
-        <div class="nav-wrapper">
-          <ul class="botnav row"></ul>
-        </div>
-      </nav>
-    </div> -->
+
     <nav class="nav-extended scroll" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="/" class="brand-logo left">
          <i class="small material-icons">close</i></a>
-         <!-- <i class="small .show-on-medium-and-down show-on-small hide-on-large-only right material-icons">bookmark_border</i> -->
-        <!-- <ul class="topnav right hide-on-med-and-down"></ul> -->
       </div>
     </nav>
 	
@@ -47,10 +39,10 @@
         </tbody>
       </table>
    </div>
-<div class=" fixed-action-btn">
+<div class="save fixed-action-btn">
     <a class="btn-floating btn-large waves-effect waves-light show-on-large .hide-on-med-and-down  indigo darken-4" id="save"><i class="material-icons">bookmark_border</i></a>
 </div>
-<div class=" fixed-action-btn">
+<div class="del fixed-action-btn">
     <a class="btn-floating btn-large waves-effect waves-light show-on-large .hide-on-med-and-down  indigo darken-4" id="delete"><i class="material-icons">delete</i></a>
 </div>
 
@@ -62,7 +54,7 @@
   <script src="service-worker.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/script.js"></script>
-  <script src="js/components.js"></script>
+  <script src="js/detailTeam.js"></script>
   <script src="js/api.js"></script>
   <script src="js/idb.js"></script>
   <script src="js/my-db.js"></script>
@@ -90,10 +82,10 @@
         const urlParams = new URLSearchParams(window.location.search);
         const isFromSaved = urlParams.get("saved");
 
-        const save = document.querySelector("#save");
+        const save = document.querySelector(".save");
         const myTeam = getTeamById();
        
-        const del = document.querySelector("#delete");
+        const del = document.querySelector(".del");
 
 
         if (isFromSaved) {
@@ -108,17 +100,19 @@
 
 
         save.onclick = function() {
-        console.log("Tombol FAB di klik.");
         myTeam.then( team => {
-            console.log(team)
+            // console.log(team)
             savedTeam(team);
+
+            save.style.display = "none";
         });
     }
         del.onclick = function() {
-        console.log("Tombol delete di klik.");
         myTeam.then( team => {
-            console.log(team)
+            // console.log(team)
             deleteTeam(team);
+
+            del.style.display = "none";
         });
     }
     });

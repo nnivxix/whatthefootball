@@ -10,8 +10,11 @@ let urlsToCache = [
   "/css/style.css",
   "/css/materialize.min.css",
   "js/script.js",
+  "js/nav.js",
   "js/api.js",
-  "js/components.js",
+  "js/daftarTeams.js",
+  "js/savedTeams.js",
+  "js/detailTeam.js",
   "js/materialize.min.js",
   "js/idb.js",
   "js/my-db.js",
@@ -43,9 +46,9 @@ self.addEventListener("fetch", function(event) {
     );
   } else {
     event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch (event.request);
-      })
+        caches.match(event.request, { ignoreSearch: true }).then(function(response) {
+            return response || fetch (event.request);
+        })
     )
   }
 });
@@ -65,5 +68,24 @@ self.addEventListener("activate", function(event) {
   );
 });
 
+self.addEventListener('push', function(event) {
+  let body;
+  if (event.data) {
+    body = event.data.text();
+  } else {
+    body = 'Push message dong ';
+  }
+  var options = {
+    body: body,
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    }
+  };
+  event.waitUntil(
+    self.registration.showNotification('Push Notification', options)
+  );
+});
 
 

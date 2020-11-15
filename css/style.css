@@ -1,3 +1,6 @@
+html{
+	scroll-behavior: smooth;
+}
 .padtop{
 	margin-top: 60px;
 }
@@ -37,9 +40,8 @@ nav .brand-logo.left{
 .col.l4.s12.center.card-bg {
     background: #f5f5f5;
     margin-bottom: 10px;
-	box-shadow: 1px 8px 24px -8px rgba(40,39,39,0.87);
-	-webkit-box-shadow: 1px 8px 24px -8px rgba(40,39,39,0.87);
-	-moz-box-shadow: 1px 8px 24px -8px rgba(40,39,39,0.87);
+    padding: 1rem ;
+
 
 
 }
@@ -56,18 +58,15 @@ a.waves-effect.waves-light.btn-color{
 .tmb-club{
 	width: 70px;
 }
-.list-club{
-	top:70;
-}
 .detail{
 	margin-top: 70px;
 }
 .squad{
 	margin-bottom: 70px;
 }
-.colors{
+/*.colors{
 	color:#233D87;
 	color:#0A105A;
 	color:#EC6F59; 
 	color:#F5F5F5; 
-}
+}*/

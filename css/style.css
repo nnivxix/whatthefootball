@@ -1,5 +1,7 @@
 html{
 	scroll-behavior: smooth;
+	font-family: 'Source Sans Pro', sans-serif;
+	
 }
 .padtop{
 	margin-top: 60px;
@@ -70,3 +72,13 @@ a.waves-effect.waves-light.btn-color{
 	color:#EC6F59; 
 	color:#F5F5F5; 
 }*/
+.load{
+	width: 100vw;
+	min-height: 100vh;
+	background-color: #F5F5F5; 
+	position: absolute;
+	top: 58px;
+}
+.hidden{
+	display: none;
+}

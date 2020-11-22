@@ -23,6 +23,7 @@ const ditelTeam = data => {
           </tr>
 	`
 	})
+	
 
 
 	document.querySelector(".detail").innerHTML = DitelTeamHTML;

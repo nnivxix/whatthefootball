@@ -11,10 +11,11 @@ let dbPromised = idb.open("wtf", 1, function(upgradeDb) {
         let tx = db.transaction("teams", "readwrite");
         let store = tx.objectStore("teams");
         store.put(team);
+
         return tx.complete;
       })
       .then(()=> {
-        alert("Tim Favoritmu sudah disimpan");
+       M.toast({html: 'Sip Sudah disimpan'})
       });
   }
     function deleteTeam(team) {
@@ -27,7 +28,8 @@ let dbPromised = idb.open("wtf", 1, function(upgradeDb) {
         return tx.complete;
       })
       .then(()=> {
-        alert("Tim Favoritmu sudah dihapus")
+         M.toast({html: 'Sip Sudah dihapus'})
+
       });
   }
 
@@ -37,12 +39,24 @@ let dbPromised = idb.open("wtf", 1, function(upgradeDb) {
     dbPromised
       .then(db => {
         let tx = db.transaction("teams", "readonly");
-        let store = tx.objectStore("teams");;
+        let store = tx.objectStore("teams");
         return store.getAll();
       })
       .then(teams => {
-        resolve(teams);
+
+        if(teams.length === 0){
+          notfound()
+        }else{
+          resolve(teams);
+        }
       });
   });
 }
 
+//component buat tampilan jika tidak ada konten tersimpan.
+function notfound(){
+  const nf = `
+  <img src="img/404.png" style="width:100%;" alt="page not found">
+  <h3 style="color:dimgrey;">Oppss, Kayaknya kamu belum menyimpan tim favorit kamu</h3 style="color:dimgrey;">`;
+  document.querySelector('#notfound').innerHTML = nf;
+}

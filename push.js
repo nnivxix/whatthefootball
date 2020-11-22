@@ -11,13 +11,13 @@ webPush.setVapidDetails(
     vapidKeys.privateKey
 )
 const pushSubscription = {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/eQFaAF601c8:APA91bGeiBaHUHWtA9hyj-kGuLtYa19sV_fqE8Eal2IQQVUMtdkjYYARn62IiCwwKaaTHEQseDyI6GLBozS23mdk9EujOF3F8qNqGBkAPEHbIsGJMc-SkclVmy4SNQ3FzKADAJYqh52X",
+    "endpoint": "https://fcm.googleapis.com/fcm/send/fh7nTAs-JoI:APA91bHcmroR2j0FwWlkvJfQE01X8GymJrbwkLzZZgeuT2ZUTarGxC2pEkRNhF1tJfdKTLFky5qzAEHEBmDal_z4JM163msLYVTJuHK24TX_HfdElFuDUjM7J3MH_aH_4TMJE5jaFgkY",
     "keys": {
-        "p256dh": "BDTk0IZpwtxyxeGUvFXYqJuTCKWEReX5A1lEUcL+EglDsiiTbtf0EGpOHyO5JpQ+Ew92/+ALQ2TVj2eKDhR/yMU=",
-        "auth": "3n+1bRk+daRDHf+E408SDA=="
+        "p256dh": "BDrVVn5usivOcvh34/is75XRCD9Aet8AgvZtAK/7h4kktlPqYGoaDz+MT27zo2ZZbeZZlo6QvlW6Vc/4OD/MI+8=",
+        "auth": "SbOLX6Q6CwDpSwVnwh++Eg=="
     }
 };
-const payload = 'wellcome to wtf';
+const payload = 'welcome to wtf';
 const options = {
     gcmAPIKey: '481503729274',
     TTL: 60
@@ -27,3 +27,5 @@ webPush.sendNotification(
     payload,
     options
 );
+//wtf-fb 946815075594
+//push-nt 481503729274

@@ -86,7 +86,6 @@ function getTeamById() {
 
 function getSavedTeam(){
   getAll().then( data =>{
-    // console.log(data)
     AllSavedTeams(data)
   })
 }
